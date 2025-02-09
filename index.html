@@ -475,66 +475,10 @@ background-size: cover;
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
-
-<table id="tablaCalificaciones">
-    <thead>
-        <tr>
-            <th>Estudiante</th>
-            <th>Nota 1</th>
-            <th>Nota 2</th>
-            <th>Nota 3</th>
-            <th>Nota 4</th>
-            <th>Promedio</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td>Estudiante 1</td>
-            <td><input type="number" class="nota" min="0" max="45" oninput="calcularPromedio(this); bloquearNotas(this)"></td>
-            <td><input type="number" class="nota" min="0" max="45" oninput="calcularPromedio(this); bloquearNotas(this)"></td>
-            <td><input type="number" class="nota" min="0" max="45" oninput="calcularPromedio(this); bloquearNotas(this)"></td>
-            <td><input type="number" class="nota" min="0" max="45" oninput="calcularPromedio(this); bloquearNotas(this)"></td>
-            <td class="resultado">-</td>
-        </tr>
-        <script>
-            // Bloquear el campo automáticamente después de ingresar una nota
-            function bloquearNotas(input) {
-                if (input.value.trim() !== "") {
-                    input.setAttribute("", "true"); // Bloquea la nota después de ingresarla
-                }
-            }
-        
-            // Calcular el promedio de las notas en la fila
-            function calcularPromedio(input) {
-                let fila = input.closest("tr"); // Encuentra la fila actual
-                let notas = fila.querySelectorAll(".nota"); // Encuentra todas las celdas de nota
-                let suma = 0, cantidad = 0;
-        
-                notas.forEach(nota => {
-                    let valor = parseFloat(nota.value); // Convierte el valor en número
-                    if (!isNaN(valor)) {
-                        suma += valor;
-                        cantidad++;
-                    }
-                });
-        
-                // Calcula el promedio
-                let promedio = cantidad > 0 ? (suma / cantidad).toFixed(2) : "-";
-                fila.querySelector(".resultado").textContent = promedio; // Muestra el promedio
-            }
         </script>
         
     </tbody>
 </table>
-
-    
-
-
-    
-</audio>
-
-</audio>
-
 
         <a href="#inicio" class="button" onclick="showSection('inicio')">Regresar</a>
     </div>
